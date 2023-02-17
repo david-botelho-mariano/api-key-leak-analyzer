@@ -1,33 +1,28 @@
 import re
+import requests
 
 database_clean = []
 
-def find_api_keys(file_path):
+def find_api_keys(link):
 
     api_keys = []
+  
+    response = requests.get(url=link)
 
-    with open(file_path, 'r') as file:
+    pattern = re.compile(r'(\b(?=\w*\d)(?=\w*[a-zA-Z])[a-zA-Z\d]{10,}\b)')
+    matches = re.findall(pattern, response.text)
+    api_keys.extend(matches)
 
-        contents = file.read()
-        pattern = re.compile(r'(\b(?=\w*\d)(?=\w*[a-zA-Z])[a-zA-Z\d]{10,}\b)')
-        matches = re.findall(pattern, contents)
-        api_keys.extend(matches)
-        print(api_keys)
+    for palavra in api_keys:
 
-        for palavra in api_keys:
-
-          if palavra not in database_clean:
-
-            database_clean.append(palavra)
-
+      if palavra not in database_clean:
+        print(palavra)
+        database_clean.append(palavra)
 
     return database_clean
 
 
-# Example usage
-api_keys = find_api_keys("1.js")
+api_keys = find_api_keys("https://teste.com.br/exemplo.js")
 
-# Saving the API keys to a file
 with open("limpo.txt", 'w') as out_file:
     out_file.write("\n".join(api_keys))
-
