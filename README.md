@@ -1,4 +1,4 @@
-# API key leak analyzer (em construção)
+# API key leak analyzer
 
 O objetivo dessa ferramenta é analisar arquivos javascript em busca de api keys expostas.
 
