@@ -1,6 +1,6 @@
 # API key leak analyzer
 
-O objetivo dessa ferramenta é analisar arquivos javascript em busca de api keys expostas.
+O objetivo dessa ferramenta é analisar páginas de um site em javascript em busca de api keys expostas.
 
 # Tutorial de uso:
 1) Modificar a URL na linha 25:
