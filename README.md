@@ -6,9 +6,7 @@ O objetivo dessa ferramenta é analisar páginas de um site em javascript em bus
 1) Modificar a URL na linha 25:
    - https://github.com/david-botelho-mariano/api-key-leak-analyzer/blob/648130ff75b1edeeb549d1f602bee4eb6fa40fd8/api-key-leak-analyzer.py#L25
 
-
 2) Em seguida execute o comando no terminal: `python api-key-leak-analyzer.py`
-
 
 # Demonstração:
 
